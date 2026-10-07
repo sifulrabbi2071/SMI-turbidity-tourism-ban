@@ -1,0 +1,107 @@
+
+=== A Results 4.1 ===
+Acquisition dates: 609 (2017-01-09 to 2026-09-24)
+Dates from Sentinel-2A: 255 (first 2017-01-09)
+Dates from Sentinel-2B: 295 (first 2017-11-10)
+Dates from Sentinel-2C: 59 (first 2025-01-27)
+Overpass times (UTC): 04:32, 04:33
+Zone–date records / usable (valid ≥ 0.30): 6090 / 2790 (45.8%)
+Usable dates, northern sector: 279
+  of which Nov–Mar: 224 (80%)
+  of which May–Aug: 3
+  by month (Jan..Dec): 49, 49, 42, 13, 1, 0, 0, 2, 10, 29, 39, 45
+Usable dates, other sectors: East 275, West 278, South 276
+Pre-restriction median turbidity, Nov (six zones, FNU): 3.4–5.5
+Pre-restriction median turbidity, Mar (six zones, FNU): 11.1–12.5
+Pre-restriction median turbidity, Apr (six zones, FNU): 11.7–18.9
+Pre-restriction usable April dates, northern sector: 6
+Median nearshore/offshore ratio: North 1.22, East 1.12, West 1.11, South 1.03
+Spearman rho, northern sector vs control: 0.91
+Maximum possible reduction if all nearshore excess removed: 3.3–18.3%
+
+=== B Study area 2.1 ===
+Mean significant wave height, Nov–Mar (m): 0.80–0.88
+Mean significant wave height, Jun–Sep (m): 1.53–2.05
+Mean 30-day catchment rainfall, Dec–Mar (mm): max 26.3
+Mean 30-day catchment rainfall, Jun–Sep (mm): 511–938
+Tide height at overpass, all overpasses (m): -0.83–1.64
+24-h tidal range, all overpasses (m): 0.60–3.30
+
+=== C Methods 3.2 ===
+Mapped island area (km²): 4.2
+Treatment sector areas (km²): North 7.9, East 4.7, West 4.4, South 5.2
+Control sector areas (km²): East 58.8, West 56.8
+Excluded ferry corridor (km²): 26.2
+Deep-variant areas (km²): 2.8–5.7
+
+=== D Results 4.2 ===
+Monthly composites: 116 (2017-01 to 2026-08)
+Months meeting inclusion criteria: 81
+Pre-restriction months: 63
+Leave-one-year-out R²: 0.51
+Coefficient of log Teknaf radiance: 0.85
+Trend independent of Teknaf (% per year): 5.6
+Effect, COVID 2020: +2.3% (placebo 95% interval −44.1% to +86.9%; p = 1.00; months below counterfactual 1/3)
+Effect, Capped (Nov–Jan): +8.8% (placebo 95% interval −58.0% to +182.0%; p = 1.00; months below counterfactual 2/6)
+Effect, Closed (Feb–Apr): −30.1% (placebo 95% interval −51.0% to −0.3%; p = 0.11; months below counterfactual 6/6)
+Effect, Closed (May–Oct): −25.8% (placebo 95% interval −62.6% to +47.4%; p = 0.38; months below counterfactual 3/3)
+Closure (Feb–Apr) monthly effects: -21.7–-42.8%
+Capped-season monthly effects: Nov 2024 −3.5%; Dec 2024 +25.5%; Jan 2025 +50.9%; Nov 2025 −43.8%; Dec 2025 +9.7%; Jan 2026 +46.8%
+Placebo years, Feb–Apr (smallest attainable p): 8 (0.11)
+
+=== E Table 5 ===
+Best model per sector: North M1_Ridge, East M1_Ridge, West M1_Ridge, South M1_Ridge
+Ridge R² range: 0.88–0.93
+Ridge RMSE range: 0.27–0.34
+Ridge max |bias|: 0.0026
+Ratio-baseline R² range: 0.75–0.91
+Permutation importance (northern sector, top 6): log_ctrl 2.114, sun_zenith 0.065, doy_sin 0.035, tide_range 0.025, ws10_72h 0.021, swh_24h 0.017
+
+=== F Table 6 ===
+Capped (Nov–Jan), North: n 34; −0.0%; bootstrap -7.3 to 8.0; placebo -16.6 to 19.9; p 1.000; MDE 22.9%
+Capped (Nov–Jan), East: n 35; −5.5%; bootstrap -14.5 to 4.4; placebo -20.0 to 11.6; p 0.500; MDE 21.1%
+Capped (Nov–Jan), West: n 33; +10.9%; bootstrap 2.1 to 22.6; placebo -3.3 to 27.2; p 0.250; MDE 17.8%
+Capped (Nov–Jan), South: n 33; +12.4%; bootstrap 1.8 to 22.8; placebo 3.4 to 22.2; p 0.125; MDE 11.3%
+Capped (Nov–Jan): effect range / MDE range: -5.5 to 12.4% / 11.3–22.9%
+Closed (Feb–Apr), North: n 26; +2.5%; bootstrap -8.8 to 18.1; placebo -17.4 to 27.2; p 0.875; MDE 26.5%
+Closed (Feb–Apr), East: n 26; −2.2%; bootstrap -11.6 to 8.3; placebo -14.0 to 11.1; p 0.875; MDE 16.8%
+Closed (Feb–Apr), West: n 26; −1.0%; bootstrap -11.8 to 10.2; placebo -17.8 to 19.2; p 0.875; MDE 23.3%
+Closed (Feb–Apr), South: n 26; −2.0%; bootstrap -11.0 to 8.3; placebo -17.5 to 16.6; p 0.875; MDE 21.9%
+Closed (Feb–Apr): effect range / MDE range: -2.2 to 2.5% / 16.8–26.5%
+Monsoon closure (May–Oct) effects: North +19.4% (n 7), East +9.3% (n 7), West −12.5% (n 8), South +10.7% (n 8)
+Monsoon closure bootstrap span: -32.5% to 64.5%
+Monsoon closure usable dates (northern sector): 2025-09-06 to 2025-10-29
+
+=== G Table 7 ===
+All closure estimates (7 specifications × 4 sectors): -5.9% to 5.0% (n = 28)
+Smallest closure placebo p (all specifications incl. deep): 0.500
+Capped W and S across thresholds, training windows, deep sectors: 10.1% to 17.3%
+Red reflectance, closure effects: -1.2% to 0.3% (p 0.875–1.000)
+Red reflectance, closure MDE (reduction): 7.8–13.6%
+Red reflectance, capped, North: +0.7% (placebo -8.9 to 11.4; p 0.875)
+Red reflectance, capped, East: −5.2% (placebo -11.7 to 1.8; p 0.125)
+Red reflectance, capped, West: +9.5% (placebo -8.5 to 31.0; p 0.500)
+Red reflectance, capped, South: +8.9% (placebo -5.7 to 25.8; p 0.375)
+XGBoost, capped W and S: +10.8% (p 0.500), +7.6% (p 0.500)
+
+=== H Results 4.5 ===
+November effects: 2.7% to 22.4% (p 0.33–0.86; placebo years 5–6)
+December–January effects: -11.2% to 8.7% (p 0.25–0.88; placebo years 7–7)
+
+=== I Results 4.5 ===
+Injection, true effect 0%: mean -4.4% (SD 5.4; n 12)
+Injection, true effect -10%: mean -14.0% (SD 4.8; n 12)
+Injection, true effect -20%: mean -23.5% (SD 4.3; n 12)
+
+=== J Results 4.6 ===
+COVID sector–dates below counterfactual: 19 of 20
+COVID dates: 2020-03-29, 2020-04-03, 2020-10-10, 2020-10-15, 2020-10-20
+Three largest COVID deficits: 20 Oct 2020 T_west −57.7%; 10 Oct 2020 T_east −51.9%; 20 Oct 2020 T_north −42.2%
+COVID mean effects across sectors: -27.4% to -17.0% (placebo p 0.10)
+Sentinel-2, 14 Oct 2025 (FNU): East 8.34, North 8.82
+Sentinel-2, 19 Oct 2025 (FNU): East 2.64, North 4.31
+Satellite / field ratio (eastern sector): 2.6 and 3.8
+Decline between the two dates: field 78%, satellite east 68%
+
+=== K Discussion 5.3 ===
+O2 solubility at 27 °C / 31.4 °C, S = 33 (mg/L): 6.60 / 6.15 (difference 0.45)

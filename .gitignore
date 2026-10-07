@@ -1,0 +1,12 @@
+# Figures are not shared (copyright transferred to the publisher); regenerate them with the scripts
+*.png
+*.pdf
+*.tif
+*.tiff
+
+# Archives and system files
+*.zip
+__pycache__/
+.ipynb_checkpoints/
+.DS_Store
+Thumbs.db
