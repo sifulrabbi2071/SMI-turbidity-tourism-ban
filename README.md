@@ -2,7 +2,7 @@
 
 Code and data for the article *Did a tourism ban clear the water? A satellite-based counterfactual assessment of nearshore turbidity at Saint Martin's Island, Bay of Bengal*.
 
-[First author full name], [Supervisor full name]
+Md Siful Islam Rabbi, [Supervisor full name]
 Department of Fisheries and Marine Science, Noakhali Science and Technology University, Noakhali 3814, Bangladesh
 
 Archived version: https://doi.org/10.5281/zenodo.[number]
@@ -17,9 +17,9 @@ This repository contains everything needed to reproduce the numbers, tables and 
 
 ```
 gee/       Google Earth Engine (JavaScript) scripts, Steps 2.1–2.6
-python/    Python scripts for Google Colaboratory, Steps 3.1–3.5, Fig. 2 and graphical abstract
+python/    Python scripts for Google Colaboratory, Steps 3.1–3.6, Fig. 2 and graphical abstract
 data/      inputs exported from Earth Engine (CSV and GeoJSON)
-outputs/   analysis outputs of Steps 3.1–3.5 (CSV and text files)
+outputs/   analysis outputs of Steps 3.1–3.6 (CSV and text files)
 ```
 
 Figures are not included, because their copyright is transferred to the publisher on publication. All figures can be regenerated with the scripts.
@@ -38,6 +38,7 @@ Figures are not included, because their copyright is transferred to the publishe
 | 3.3 | python/SMI_Step3_3_Robustness_colab.py | Placebo intervals, robustness checks (incl. red reflectance), injection test, permutation importance, COVID-19 dates | outputs/step3_3/ |
 | 3.4 | python/SMI_Step3_4_NightLights_colab.py | Night-light counterfactual (manipulation check) | outputs/step3_4/ |
 | 3.5 | python/SMI_Step3_5_Manuscript_numbers_colab.py | Remaining manuscript numbers, Tables 5–7, Figs 1 and 3–7 | outputs/step3_5/ |
+| 3.6 | python/SMI_Step3_6_Supplementary_colab.py | Supplementary Tables S1–S7 and Fig. S1, with consistency checks | outputs/step3_6/ |
 | Fig. 2 | python/SMI_Fig2_workflow_colab.py | Workflow diagram | outputs/step3_5/ |
 | GA | python/SMI_Graphical_abstract_colab.py | Graphical abstract | outputs/figures/ |
 
@@ -47,14 +48,14 @@ There is no Step 2.5 in the final workflow.
 
 **Earth Engine (Steps 2.1–2.6).** Open each script in the Earth Engine Code Editor and replace the placeholder `YOUR_PROJECT_ID` with your own Google Cloud project ID. The sector polygons of Step 2.2 (north, south, west and ferry corridor) were digitised by hand in the Code Editor; the resulting zones are provided in `data/SMI_zones_v2_geojson.geojson`, so the later steps can be reproduced exactly without redrawing them.
 
-**Python (Steps 3.1–3.5).** The scripts were written for Google Colaboratory with Google Drive.
+**Python (Steps 3.1–3.6).** The scripts were written for Google Colaboratory with Google Drive.
 
 1. In your Google Drive, create the folder `SMI_project/` and copy the four files of `data/` into it.
 2. To start from the archived outputs instead of rerunning everything, also copy the folder `outputs/` into `SMI_project/`.
 3. In Colab, mount Drive in a first cell (`from google.colab import drive; drive.mount('/content/drive')`), then paste a script into a second cell and run it.
 4. Run the steps in the order of the table above.
 
-Paths are set at the top of each script. Steps 3.2–3.5 and the figure scripts also accept the environment variables `SMI_DATA` (input folder) and `SMI_BASE` (output folder).
+Paths are set at the top of each script. Steps 3.2–3.6 and the figure scripts also accept the environment variables `SMI_DATA` (input folder) and `SMI_BASE` (output folder).
 
 ## Software
 
@@ -79,8 +80,8 @@ Code and data are released under the Creative Commons Attribution 4.0 Internatio
 
 Please cite the article and this archive:
 
-[First author], [Supervisor], 2026. Code and data for: Did a tourism ban clear the water? A satellite-based counterfactual assessment of nearshore turbidity at Saint Martin's Island, Bay of Bengal (v1.0). Zenodo. https://doi.org/10.5281/zenodo.[number]
+Rabbi, M.S.I., [Supervisor], 2026. Code and data for: Did a tourism ban clear the water? A satellite-based counterfactual assessment of nearshore turbidity at Saint Martin's Island, Bay of Bengal (v1.0). Zenodo. https://doi.org/10.5281/zenodo.[number]
 
 ## Contact
 
-[Corresponding author name], [email address]
+Md Siful Islam Rabbi (siful0216@student.nstu.edu.bd; sifulrabbi2871@gmail.com)

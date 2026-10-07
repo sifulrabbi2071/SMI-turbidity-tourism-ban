@@ -1,0 +1,65 @@
+Period,Sector,Placebo year,n,Effect (%)
+Capped (Nov–Jan),North,2017/18,10,0.36203253453888085
+Capped (Nov–Jan),North,2018/19,10,-0.859804003573561
+Capped (Nov–Jan),North,2019/20,16,2.2283655598537955
+Capped (Nov–Jan),North,2020/21,15,0.5640204822841444
+Capped (Nov–Jan),North,2021/22,12,11.811074094767914
+Capped (Nov–Jan),North,2022/23,15,-12.766698953457878
+Capped (Nov–Jan),North,2023/24,15,-14.14550801833655
+Capped (Nov–Jan),North,Restriction (observed),34,-0.0219965959855183
+Closed (Feb–Apr),North,2017/18,5,15.823317516227874
+Closed (Feb–Apr),North,2018/19,14,14.667371655692119
+Closed (Feb–Apr),North,2019/20,10,11.233889753600334
+Closed (Feb–Apr),North,2020/21,9,1.8519602882119068
+Closed (Feb–Apr),North,2021/22,10,-3.783811841897866
+Closed (Feb–Apr),North,2022/23,10,-13.009295029423606
+Closed (Feb–Apr),North,2023/24,12,-6.103932896730346
+Closed (Feb–Apr),North,Restriction (observed),26,2.4659668591749284
+Capped (Nov–Jan),East,2017/18,10,1.5790390112454533
+Capped (Nov–Jan),East,2018/19,10,-1.8051168096278158
+Capped (Nov–Jan),East,2019/20,16,6.357420482282428
+Capped (Nov–Jan),East,2020/21,15,0.6727803155872847
+Capped (Nov–Jan),East,2021/22,13,5.287972526116591
+Capped (Nov–Jan),East,2022/23,14,-16.962940262063874
+Capped (Nov–Jan),East,2023/24,15,-6.152277614400125
+Capped (Nov–Jan),East,Restriction (observed),35,-5.518140407734251
+Closed (Feb–Apr),East,2017/18,5,-9.518349830314964
+Closed (Feb–Apr),East,2018/19,14,10.051012378100399
+Closed (Feb–Apr),East,2019/20,10,0.8079678238652299
+Closed (Feb–Apr),East,2020/21,9,-6.384758312831651
+Closed (Feb–Apr),East,2021/22,10,-3.421379878218722
+Closed (Feb–Apr),East,2022/23,10,2.3783373186106127
+Closed (Feb–Apr),East,2023/24,13,2.645996480281032
+Closed (Feb–Apr),East,Restriction (observed),26,-2.245636728560552
+Capped (Nov–Jan),West,2017/18,10,-9.958865061617727
+Capped (Nov–Jan),West,2018/19,10,-2.29881952073715
+Capped (Nov–Jan),West,2019/20,16,-4.314853857123868
+Capped (Nov–Jan),West,2020/21,15,7.715268010974996
+Capped (Nov–Jan),West,2021/22,13,-7.64435027422471
+Capped (Nov–Jan),West,2022/23,15,4.274978424027154
+Capped (Nov–Jan),West,2023/24,15,-9.701104286829798
+Capped (Nov–Jan),West,Restriction (observed),33,10.91471755932718
+Closed (Feb–Apr),West,2017/18,5,12.507615946768635
+Closed (Feb–Apr),West,2018/19,14,15.240045075520303
+Closed (Feb–Apr),West,2019/20,10,0.8284557337708387
+Closed (Feb–Apr),West,2020/21,9,-11.762388992966377
+Closed (Feb–Apr),West,2021/22,10,-2.4566331568427358
+Closed (Feb–Apr),West,2022/23,10,-5.853418113807363
+Closed (Feb–Apr),West,2023/24,13,2.590222063056258
+Closed (Feb–Apr),West,Restriction (observed),26,-1.00286021269671
+Capped (Nov–Jan),South,2017/18,9,-5.964776783886627
+Capped (Nov–Jan),South,2018/19,10,1.0552588748752312
+Capped (Nov–Jan),South,2019/20,16,-1.248247473133235
+Capped (Nov–Jan),South,2020/21,15,3.140713028767861
+Capped (Nov–Jan),South,2021/22,13,-5.670294784379159
+Capped (Nov–Jan),South,2022/23,14,3.046390703997015
+Capped (Nov–Jan),South,2023/24,15,-6.013354691121508
+Capped (Nov–Jan),South,Restriction (observed),33,12.3989803717806
+Closed (Feb–Apr),South,2017/18,5,-7.3147869445620355
+Closed (Feb–Apr),South,2018/19,14,10.728425347715852
+Closed (Feb–Apr),South,2019/20,10,7.717114036951633
+Closed (Feb–Apr),South,2020/21,9,-8.816780917509004
+Closed (Feb–Apr),South,2021/22,10,-12.26619759875226
+Closed (Feb–Apr),South,2022/23,10,0.2506629848268327
+Closed (Feb–Apr),South,2023/24,13,2.708899297559153
+Closed (Feb–Apr),South,Restriction (observed),26,-1.952133341106088

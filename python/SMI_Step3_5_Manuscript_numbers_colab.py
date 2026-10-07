@@ -30,7 +30,7 @@ Outputs: SMI_project/outputs/step3_5/
     table5_cv.csv, table6_effects.csv, table7_robustness.csv
     Fig1_study_area, Fig3_availability_seasonality, Fig4_night_lights,
     Fig5_counterfactual_north, Fig6_effects, Fig7_robustness (.png, .pdf)
-Version 1.0 (October 2026)
+Version 1.1 (October 2026): Fig. 5a axes widened to 0.5–250 FNU so that all points are shown
 """
 import os
 import warnings
@@ -530,10 +530,10 @@ oof = pd.read_csv(P["oof"], parse_dates=["date"]); oof = oof[(oof.model == "M1_R
 cfp = pd.read_csv(P["cf"], parse_dates=["date"]); cfp = cfp[(cfp.model == "M1_Ridge") & (cfp.zone == "T_north")]
 fig, (a, b) = plt.subplots(1, 2, figsize=(7.2, 3.0), gridspec_kw={"width_ratios": [1, 1.9]})
 a.loglog(np.exp(oof.pred), np.exp(oof.y), "o", ms=2.6, color="#D55E00", alpha=0.6, mew=0)
-lim = [0.5, 60]; a.plot(lim, lim, color="#555", lw=0.7); a.set_xlim(lim); a.set_ylim(lim)
+lim = [0.5, 250]; a.plot(lim, lim, color="#555", lw=0.7); a.set_xlim(lim); a.set_ylim(lim)   # v1.1: all points shown
 a.set_xlabel("Predicted turbidity (FNU)"); a.set_ylabel("Observed turbidity (FNU)")
 a.set_title("(a) Cross-validation, north", fontsize=8, loc="left")
-a.text(0.6, 40, f"R² = {t5.loc['T_north','M1_Ridge']:.2f} (log scale)\nn = {len(oof)}", fontsize=6.8, va="top")
+a.text(0.6, 150, f"R² = {t5.loc['T_north','M1_Ridge']:.2f} (log scale)\nn = {len(oof)}", fontsize=6.8, va="top")
 a.grid(color=GRID, lw=0.5); a.set_axisbelow(True)
 allp = pd.concat([oof[oof.date >= pd.Timestamp("2023-10-01")][["date", "y", "pred"]],
                   cfp[cfp.group != "COVID closure 2020"][["date", "y", "pred"]]]).sort_values("date")
@@ -546,7 +546,7 @@ b.semilogy(allp.date, np.exp(allp.pred), "o", ms=3.2, mfc="white", mec="#555", m
 b.semilogy(allp.date, np.exp(allp.y), "o", ms=2.6, color="#D55E00", mew=0, label="Observed")
 for _, r in allp.iterrows():
     b.plot([r.date, r.date], [np.exp(r.pred), np.exp(r.y)], color="#bbbbbb", lw=0.5, zorder=0)
-b.set_ylabel("Turbidity (FNU)"); b.set_title("(b) Observed and counterfactual turbidity, north", fontsize=8, loc="left")
+b.set_ylim(0.5, 250); b.set_ylabel("Turbidity (FNU)"); b.set_title("(b) Observed and counterfactual turbidity, north", fontsize=8, loc="left")
 b.grid(axis="y", color=GRID, lw=0.5); b.set_axisbelow(True)
 yl = b.get_ylim()
 b.text(pd.Timestamp("2024-11-06"), yl[1] * 0.55, "Capped", fontsize=6.0, ha="left", color="#9a6a00")

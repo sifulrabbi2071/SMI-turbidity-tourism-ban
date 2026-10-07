@@ -5,13 +5,14 @@ version: "1.0"
 type: software
 license: CC-BY-4.0
 authors:
-  - family-names: "FIRST-AUTHOR-SURNAME"
-    given-names: "FIRST-AUTHOR-GIVEN-NAMES"
+  - family-names: "Rabbi"
+    given-names: "Md Siful Islam"
     affiliation: "Department of Fisheries and Marine Science, Noakhali Science and Technology University, Noakhali 3814, Bangladesh"
+    email: "siful0216@student.nstu.edu.bd"
   - family-names: "SUPERVISOR-SURNAME"
     given-names: "SUPERVISOR-GIVEN-NAMES"
     affiliation: "Department of Fisheries and Marine Science, Noakhali Science and Technology University, Noakhali 3814, Bangladesh"
-repository-code: "https://github.com/YOUR-USERNAME/SMI-turbidity-tourism-ban"
+repository-code: "https://github.com/sifulrabbi2071/SMI-turbidity-tourism-ban"
 keywords:
   - counterfactual analysis
   - Sentinel-2
