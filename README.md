@@ -2,7 +2,7 @@
 
 Code and data for the article *Did a tourism ban clear the water? A satellite-based counterfactual assessment of nearshore turbidity at Saint Martin's Island, Bay of Bengal*.
 
-Md Siful Islam Rabbi, [Supervisor full name]
+Md Siful Islam Rabbi, Afshana Parven
 Department of Fisheries and Marine Science, Noakhali Science and Technology University, Noakhali 3814, Bangladesh
 
 Archived version: https://doi.org/10.5281/zenodo.[number]
@@ -80,7 +80,7 @@ Code and data are released under the Creative Commons Attribution 4.0 Internatio
 
 Please cite the article and this archive:
 
-Rabbi, M.S.I., [Supervisor], 2026. Code and data for: Did a tourism ban clear the water? A satellite-based counterfactual assessment of nearshore turbidity at Saint Martin's Island, Bay of Bengal (v1.0). Zenodo. https://doi.org/10.5281/zenodo.[number]
+Rabbi, M.S.I., Parven, A., 2026. Code and data for: Did a tourism ban clear the water? A satellite-based counterfactual assessment of nearshore turbidity at Saint Martin's Island, Bay of Bengal (v1.0). Zenodo. https://doi.org/10.5281/zenodo.[number]
 
 ## Contact
 
