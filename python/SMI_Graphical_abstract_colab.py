@@ -78,7 +78,7 @@ fig = plt.figure(figsize=(W, H))
 bg = fig.add_axes([0, 0, 1, 1])
 bg.axis("off"); bg.set_xlim(0, W); bg.set_ylim(0, H)
 
-bg.text(W / 2, H - 0.38, "Did a tourism ban clear the water at Saint Martin's Island?",
+bg.text(W / 2, H - 0.38, "Did tourism closures clear the water at Saint Martin's Island?",
         ha="center", va="center", fontsize=22, fontweight="bold", color=INK)
 
 xs = [0.25, 3.55, 6.85, 10.15]          # left edge of each panel
