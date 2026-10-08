@@ -9,4 +9,4 @@ Analysis outputs (CSV and text files) of the Python scripts. Figures are not inc
 | step3_3/ | Step 3.3 | robustness_effects.csv, injection_test.csv, importance_T_north.csv, covid_dates.csv |
 | step3_4/ | Step 3.4 | night_lights_effects.csv, night_lights_monthly_effects.csv |
 | step3_5/ | Step 3.5 | manuscript_numbers.txt and .csv, table5_cv.csv, table6_effects.csv, table7_robustness.csv, capped_split_nov_decjan.csv |
-| step3_6/ | Step 3.6 | TableS1–TableS7 (CSV) and supplementary_check.txt |
+| step3_6/ | Step 3.6 | TableS1–TableS8 (CSV) and supplementary_check.txt |

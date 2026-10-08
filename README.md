@@ -38,7 +38,7 @@ Figures are not included, because their copyright is transferred to the publishe
 | 3.3 | python/SMI_Step3_3_Robustness_colab.py | Placebo intervals, robustness checks (incl. red reflectance), injection test, permutation importance, COVID-19 dates | outputs/step3_3/ |
 | 3.4 | python/SMI_Step3_4_NightLights_colab.py | Night-light counterfactual (manipulation check) | outputs/step3_4/ |
 | 3.5 | python/SMI_Step3_5_Manuscript_numbers_colab.py | Remaining manuscript numbers, Tables 5–7, Figs 1 and 3–7 | outputs/step3_5/ |
-| 3.6 | python/SMI_Step3_6_Supplementary_colab.py | Supplementary Tables S1–S7 and Fig. S1, with consistency checks | outputs/step3_6/ |
+| 3.6 | python/SMI_Step3_6_Supplementary_colab.py | Supplementary Tables S1–S8 and Fig. S1, with consistency checks | outputs/step3_6/ |
 | Fig. 2 | python/SMI_Fig2_workflow_colab.py | Workflow diagram | outputs/step3_5/ |
 | GA | python/SMI_Graphical_abstract_colab.py | Graphical abstract | outputs/figures/ |
 

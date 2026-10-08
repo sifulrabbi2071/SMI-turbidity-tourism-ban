@@ -8,6 +8,14 @@
 [OK] Table S3: placebo interval reproduced, West, Closed (Feb–Apr) — -17.8 to 19.2 (Step 3.3: -17.8 to 19.2); 7 years
 [OK] Table S3: placebo interval reproduced, South, Capped (Nov–Jan) — 3.4 to 22.2 (Step 3.3: 3.4 to 22.2); 7 years
 [OK] Table S3: placebo interval reproduced, South, Closed (Feb–Apr) — -17.5 to 16.6 (Step 3.3: -17.5 to 16.6); 7 years
-[OK] Table S4: monsoon closure n per sector — North 7, East 7, West 8, South 8
-[OK] Table S6: injection, true 0% — mean -4.4%, SD 5.4, n 12
-[OK] Table S7: sector–dates below counterfactual — 19 of 20
+[OK] Table S5: monsoon closure n per sector — North 7, East 7, West 8, South 8
+[OK] Table S7: injection, true 0% — mean -4.4%, SD 5.4, n 12
+[OK] Table S8: sector–dates below counterfactual — 19 of 20
+[OK] Table S4: effect matches Table 6, North, Capped (Nov–Jan) — -0.02% (n 34)
+[OK] Table S4: effect matches Table 6, North, Closed (Feb–Apr) — 2.47% (n 26)
+[OK] Table S4: effect matches Table 6, East, Capped (Nov–Jan) — -5.52% (n 35)
+[OK] Table S4: effect matches Table 6, East, Closed (Feb–Apr) — -2.25% (n 26)
+[OK] Table S4: effect matches Table 6, West, Capped (Nov–Jan) — 10.91% (n 33)
+[OK] Table S4: effect matches Table 6, West, Closed (Feb–Apr) — -1.00% (n 26)
+[OK] Table S4: effect matches Table 6, South, Capped (Nov–Jan) — 12.40% (n 33)
+[OK] Table S4: effect matches Table 6, South, Closed (Feb–Apr) — -1.95% (n 26)

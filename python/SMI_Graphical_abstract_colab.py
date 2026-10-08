@@ -16,7 +16,7 @@ HOW TO RUN IN COLAB
     1. Run the first cell:  from google.colab import drive; drive.mount('/content/drive')
     2. Paste this whole script into a second cell and run it.
     3. The finished files appear in SMI_project/outputs/figures.
-Version 1.0 (October 2026)
+Version 1.1 (October 2026): panel 4 wording revised (no attribution to monsoon waves)
 """
 import os
 import numpy as np
@@ -152,11 +152,11 @@ bg.text(xs[2] + 0.15, py + 0.15, "grey bars: normal year-to-year range", fontsiz
 x4, y = xs[3] + 0.2, py + 2.75
 lines = [("Nearshore water tracks", 13, Q, "normal"),
          ("offshore water", 13, Q, "normal"),
-         (f"(only {excess_lo:.0f}–{excess_hi:.0f}% more turbid)", 12, Q, "normal"),
+         (f"(typically {excess_lo:.0f}–{excess_hi:.0f}% more turbid)", 12, Q, "normal"),
          ("", 8, Q, "normal"),
-         ("Regional sediment", 15, ORANGE, "bold"),
-         ("(Naf River, monsoon waves)", 12, Q, "normal"),
-         ("controls water clarity", 15, ORANGE, "bold")]
+         ("Regional processes", 15, ORANGE, "bold"),
+         ("(river plumes, resuspension)", 12, Q, "normal"),
+         ("likely control clarity", 15, ORANGE, "bold")]
 for text, fs, c, fw in lines:
     bg.text(x4, y, text, fontsize=fs, color=c, fontweight=fw)
     y -= 0.33 if fs > 9 else 0.12

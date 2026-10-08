@@ -13,17 +13,18 @@ Outputs : SMI_project/outputs/step3_6/
     TableS1_night_lights_monthly.csv   monthly night-light effects after the restrictions
     TableS2_importance_north.csv       permutation importance, northern sector
     TableS3_placebo_years.csv          effect in each placebo year (turbidity, ridge)
-    TableS4_monsoon_closure.csv        effects for the monsoon months of the closure
-    TableS5_capped_split.csv           capped season split: November vs December–January
-    TableS6_injection.csv              known-effect injection test
-    TableS7_covid_dates.csv            individual dates of the 2020 COVID-19 shutdown
+    TableS4_block_bootstrap.csv        bootstrap intervals resampling whole months (v1.1)
+    TableS5_monsoon_closure.csv        effects for the monsoon months of the closure
+    TableS6_capped_split.csv           capped season split: November vs December–January
+    TableS7_injection.csv              known-effect injection test
+    TableS8_covid_dates.csv            individual dates of the 2020 COVID-19 shutdown
     FigS1_counterfactual_other_sectors.png (600 dpi) and .pdf
     supplementary_check.txt            consistency checks against the manuscript files
 
 HOW TO RUN IN COLAB
     1. from google.colab import drive; drive.mount('/content/drive')
     2. paste this script into a new cell and run it (about 1 minute).
-Version 1.0 (October 2026)
+Version 1.1 (October 2026): adds Table S4 (month-block bootstrap)
 """
 import os
 import warnings
@@ -45,6 +46,9 @@ PROJECT = os.environ.get("SMI_DATA", "/content/drive/MyDrive/SMI_project")
 BASE = os.environ.get("SMI_BASE", os.path.join(PROJECT, "outputs"))
 OUT = os.path.join(BASE, "step3_6")
 os.makedirs(OUT, exist_ok=True)
+for _f in os.listdir(OUT):                      # remove tables from earlier versions
+    if _f.startswith("TableS") and _f.endswith(".csv"):
+        os.remove(os.path.join(OUT, _f))
 
 P = {
     "data": os.path.join(BASE, "SMI_analysis_dataset_v1.csv"),
@@ -168,7 +172,7 @@ s3 = pd.DataFrame(s3_rows)
 s3.to_csv(os.path.join(OUT, "TableS3_placebo_years.csv"), index=False)
 
 # ------------------------------------------------------------------
-# Table S4. Monsoon months of the closure (Results 4.4)
+# Table S5. Monsoon months of the closure (Results 4.4)
 # ------------------------------------------------------------------
 eff = pd.read_csv(P["eff"])
 s4 = eff[(eff.model == "M1_Ridge") & eff.zone.isin(SEC) & (eff.group == "Closed (May–Oct)")].copy()
@@ -177,11 +181,11 @@ s4 = s4.set_index("zone").reindex(SEC)
 s4 = s4.rename(columns={"n_obs": "n", "effect_pct": "Effect (%)", "ci_low_pct": "Bootstrap 95% CI, lower",
                         "ci_high_pct": "Bootstrap 95% CI, upper"})
 s4 = s4[["Sector", "n", "Effect (%)", "Bootstrap 95% CI, lower", "Bootstrap 95% CI, upper"]]
-s4.to_csv(os.path.join(OUT, "TableS4_monsoon_closure.csv"), index=False)
-check("Table S4: monsoon closure n per sector", True, ", ".join(f"{r.Sector} {int(r.n)}" for _, r in s4.iterrows()))
+s4.to_csv(os.path.join(OUT, "TableS5_monsoon_closure.csv"), index=False)
+check("Table S5: monsoon closure n per sector", True, ", ".join(f"{r.Sector} {int(r.n)}" for _, r in s4.iterrows()))
 
 # ------------------------------------------------------------------
-# Table S5. Capped season split (Results 4.5)
+# Table S6. Capped season split (Results 4.5)
 # ------------------------------------------------------------------
 sp = pd.read_csv(P["split"])
 sp["Sector"] = sp.zone.map(LAB)
@@ -190,10 +194,10 @@ s5 = sp.rename(columns={"part": "Part", "effect_pct": "Effect (%)", "placebo_p":
 s5["_p"] = s5.Part.map({"November": 0, "December–January": 1})
 s5["_s"] = sp.zone.map({z: i for i, z in enumerate(SEC)})
 s5 = s5.sort_values(["_p", "_s"]).drop(columns=["_p", "_s"])
-s5.to_csv(os.path.join(OUT, "TableS5_capped_split.csv"), index=False)
+s5.to_csv(os.path.join(OUT, "TableS6_capped_split.csv"), index=False)
 
 # ------------------------------------------------------------------
-# Table S6. Known-effect injection (Results 4.5)
+# Table S7. Known-effect injection (Results 4.5)
 # ------------------------------------------------------------------
 inj = pd.read_csv(P["inj"])
 s6 = inj.pivot_table(index=["zone", "pseudo_season"], columns="true_effect_pct", values="estimated_pct").reset_index()
@@ -203,12 +207,12 @@ s6["_o"] = s6.zone.map({z: i for i, z in enumerate(SEC)})
 s6 = s6.sort_values(["_o", "pseudo_season"])
 s6["Pseudo-restriction season"] = s6.pseudo_season.str.replace(r"/20(\d\d)$", r"/\1", regex=True)   # 2021/2022 -> 2021/22
 s6 = s6[["Sector", "Pseudo-restriction season", "Estimate, true 0%", "Estimate, true −10%", "Estimate, true −20%"]]
-s6.to_csv(os.path.join(OUT, "TableS6_injection.csv"), index=False)
+s6.to_csv(os.path.join(OUT, "TableS7_injection.csv"), index=False)
 mean0 = inj[inj.true_effect_pct == 0].estimated_pct
-check("Table S6: injection, true 0%", len(mean0) == 12, f"mean {mean0.mean():.1f}%, SD {mean0.std():.1f}, n {len(mean0)}")
+check("Table S7: injection, true 0%", len(mean0) == 12, f"mean {mean0.mean():.1f}%, SD {mean0.std():.1f}, n {len(mean0)}")
 
 # ------------------------------------------------------------------
-# Table S7. COVID-19 shutdown dates (Results 4.6)
+# Table S8. COVID-19 shutdown dates (Results 4.6)
 # ------------------------------------------------------------------
 cv19 = pd.read_csv(P["covid"], parse_dates=["date"])
 cv19["Sector"] = cv19.zone.map(LAB)
@@ -218,8 +222,37 @@ s7["Date"] = s7.date.dt.strftime("%d %b %Y")
 s7 = s7.rename(columns={"control_ref": "Control (FNU)", "observed": "Observed (FNU)",
                         "counterfactual": "Counterfactual (FNU)", "effect_pct": "Effect (%)"})
 s7 = s7[["Date", "Sector", "Control (FNU)", "Observed (FNU)", "Counterfactual (FNU)", "Effect (%)"]]
-s7.to_csv(os.path.join(OUT, "TableS7_covid_dates.csv"), index=False)
-check("Table S7: sector–dates below counterfactual", True, f"{(cv19.effect_pct < 0).sum()} of {len(cv19)}")
+s7.to_csv(os.path.join(OUT, "TableS8_covid_dates.csv"), index=False)
+check("Table S8: sector–dates below counterfactual", True, f"{(cv19.effect_pct < 0).sum()} of {len(cv19)}")
+
+# ------------------------------------------------------------------
+# Table S4. Month-block bootstrap (Section 4.4) — allows for serial
+# correlation of residuals within a month by resampling whole calendar months
+# ------------------------------------------------------------------
+cfb = pd.read_csv(P["cf"], parse_dates=["date"])
+cfb = cfb[(cfb.model == "M1_Ridge") & cfb.zone.isin(SEC)]
+RNG = np.random.default_rng(42)
+s8_rows = []
+for zone in SEC:
+    for grp in GROUPS:
+        q = cfb[(cfb.zone == zone) & (cfb.group == grp)].sort_values("date")
+        res = (q.y - q.pred).values
+        month = q.date.dt.to_period("M").values
+        blocks = [res[month == m] for m in sorted(set(month))]
+        est = res.mean()
+        r = rob_main.loc[(zone, grp)]
+        check(f"Table S4: effect matches Table 6, {LAB[zone]}, {grp}",
+              abs(pct(est) - r.effect_pct) < 0.01 and len(res) == r.n, f"{pct(est):.2f}% (n {len(res)})")
+        boot = np.array([np.concatenate([blocks[i] for i in RNG.integers(0, len(blocks), len(blocks))]).mean()
+                         for _ in range(1000)])
+        s8_rows.append({"Period": grp, "Sector": LAB[zone], "n": len(res), "Months": len(blocks),
+                        "Effect (%)": pct(est),
+                        "Date bootstrap, lower": r.boot_lo, "Date bootstrap, upper": r.boot_hi,
+                        "Month-block bootstrap, lower": pct(np.percentile(boot, 2.5)),
+                        "Month-block bootstrap, upper": pct(np.percentile(boot, 97.5)),
+                        "Placebo interval, lower": r.plac_lo, "Placebo interval, upper": r.plac_hi})
+s8 = pd.DataFrame(s8_rows)
+s8.to_csv(os.path.join(OUT, "TableS4_block_bootstrap.csv"), index=False)
 
 # ------------------------------------------------------------------
 # Fig. S1. Counterfactuals for the eastern, western and southern sectors
@@ -282,7 +315,7 @@ plt.close(fig)
 with open(os.path.join(OUT, "supplementary_check.txt"), "w", encoding="utf-8") as fh:
     fh.write("\n".join(checks) + "\n")
 n_bad = sum(c.startswith("[CHECK]") for c in checks)
-print(f"\nSaved in {OUT}: Tables S1–S7 (CSV) and Fig. S1 (PNG, PDF).")
+print(f"\nSaved in {OUT}: Tables S1–S8 (CSV) and Fig. S1 (PNG, PDF).")
 print("All checks passed." if n_bad == 0 else f"{n_bad} check(s) need attention — see supplementary_check.txt")
 
 try:
