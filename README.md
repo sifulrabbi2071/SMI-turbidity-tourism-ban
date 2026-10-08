@@ -5,7 +5,7 @@ Code and data for the article *Tourism closures did not detectably reduce nearsh
 Md Siful Islam Rabbi, Afshana Parven
 Department of Fisheries and Marine Science, Noakhali Science and Technology University, Noakhali 3814, Bangladesh
 
-Archived version: https://doi.org/10.5281/zenodo.[number]
+Archived version: https://doi.org/10.5281/zenodo.23237200
 
 ## About the study
 
@@ -80,7 +80,7 @@ Code and data are released under the Creative Commons Attribution 4.0 Internatio
 
 Please cite the article and this archive:
 
-Rabbi, M.S.I., Parven, A., 2026. Code and data for: Tourism closures did not detectably reduce nearshore turbidity at Saint Martin's Island, Bay of Bengal: a Sentinel-2 counterfactual analysis (v1.0). Zenodo. https://doi.org/10.5281/zenodo.[number]
+Rabbi, M.S.I., Parven, A., 2026. Code and data for: Tourism closures did not detectably reduce nearshore turbidity at Saint Martin's Island, Bay of Bengal: a Sentinel-2 counterfactual analysis (v1.0). Zenodo. https://doi.org/10.5281/zenodo.23237200
 
 ## Contact
 
